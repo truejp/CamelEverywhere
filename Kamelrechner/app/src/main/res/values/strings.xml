@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Kamelrechner</string>
+    <string name="kamelrechner">Kamelrechner</string>
+    <string name="go">Go</string>
+</resources>
