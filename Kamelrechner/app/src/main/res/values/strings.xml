@@ -2,4 +2,15 @@
     <string name="app_name">Kamelrechner</string>
     <string name="kamelrechner">Kamelrechner</string>
     <string name="go">Go</string>
+    <string name="Name">Name</string>
+    <string name="Gewicht">Gewicht</string>
+    <string name="Alter">Alter</string>
+    <string name="Geschlecht">Geschlecht</string>
+    <string name="Haarfarbe">Haarfarbe</string>
+    <string name="Augenfarbe">Augenfarbe</string>
+    <string name="Körbchengröße">Körbchengröße</string>
+    <string name="Statur">Statur</string>
+    <string name="Header">Gib deine Daten ein!</string>
+    <string name="Berechnen">Berechnen</string>
+    <string name="mustername">Sophia</string>
 </resources>
