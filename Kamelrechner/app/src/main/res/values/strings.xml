@@ -13,4 +13,8 @@
     <string name="Header">Gib deine Daten ein!</string>
     <string name="Berechnen">Berechnen</string>
     <string name="mustername">Sophia</string>
+    <string name="close">Info schließen</string>
+    <string name="Info_Header">Über unsere App</string>
+    <string name="info">i</string>
+    <string name="verlauf">Highscore</string>
 </resources>
