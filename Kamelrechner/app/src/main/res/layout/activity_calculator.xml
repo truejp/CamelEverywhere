@@ -66,14 +66,15 @@
             android:id="@+id/male"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:text="Männlich" />
 
         <RadioButton
             android:id="@+id/female"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
             android:text="Weiblich" />
+
     </RadioGroup>
 
     <TextView
@@ -166,6 +167,11 @@
         android:id="@+id/haircolor_input"
         android:layout_width="232dp"
         android:layout_height="22dp"
+        android:max="4"
+        android:stepSize="1"
+        android:value="1"
+        android:valueFrom="1"
+        android:valueTo="5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.832"
@@ -199,18 +205,6 @@
         app:layout_constraintVertical_bias="0.537"
         app:srcCompat="@drawable/augen" />
 
-    <SeekBar
-        android:id="@+id/eyecolor_input"
-        android:layout_width="227dp"
-        android:layout_height="19dp"
-        android:progressTint="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75" />
-
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
@@ -229,7 +223,7 @@
         android:id="@+id/Bodytype_output"
         android:layout_width="250dp"
         android:layout_height="25dp"
-        android:text="mager | dünn | normal | dick | trainiert"
+        android:text="mager | dick | dünn | normal | trainiert"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -256,6 +250,11 @@
         android:id="@+id/body_input"
         android:layout_width="226dp"
         android:layout_height="17dp"
+        android:max="4"
+        android:value="1"
+        android:stepSize="1"
+        android:valueFrom="1"
+        android:valueTo="5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.778"
@@ -267,6 +266,7 @@
         android:id="@+id/imageView11"
         android:layout_width="220dp"
         android:layout_height="33dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.953"
@@ -282,6 +282,7 @@
         android:text="@string/Körbchengröße"
         android:textColor="#000000"
         android:textSize="18sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.13"
@@ -290,11 +291,18 @@
         app:layout_constraintVertical_bias="0.756" />
 
     <SeekBar
-        android:id="@+id/breastsize_input"
-        android:layout_width="202dp"
-        android:layout_height="22dp"
+        android:id="@+id/eyecolor_input"
+        android:layout_width="210dp"
+        android:layout_height="25dp"
+        android:max="3"
+        android:stepSize="1"
+        android:value="1"
+        android:valueFrom="1"
+        android:valueTo="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -309,12 +317,33 @@
         app:layout_constraintVertical_bias="0.672"
         app:srcCompat="@drawable/haarfarbe" />
 
+    <SeekBar
+        android:id="@+id/breastsize_input"
+        android:layout_width="208dp"
+        android:layout_height="25dp"
+        android:max="3"
+        android:stepSize="1"
+        android:valueFrom="1"
+        android:valueTo="4"
+        android:value="1"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.753" />
+
     <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="184dp"
-        android:layout_height="164dp"
-        app:srcCompat="@drawable/kopf"
-        tools:layout_editor_absoluteX="245dp"
-        tools:layout_editor_absoluteY="695dp" />
+        android:id="@+id/imageView5"
+        android:layout_width="126dp"
+        android:layout_height="124dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/logo_free" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
