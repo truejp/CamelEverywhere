@@ -18,6 +18,10 @@
     <string name="info">i</string>
     <string name="verlauf">Highscore</string>
     <string name="res_close">Neuen Wert berechnen</string>
+    <string name="Rechnung">camels = (body+eye+breast+hair)*2+(1/200*(weight-65)*(weight-65)+10)+gender+(1/200)*(age-20)*(age-20)+10)</string>
+    <string name="Variablen">body = Statur , eye = Augenfarbe , breast = Körpchengröße , hair= Haarfarbe , weight = Gewicht in Kilogramm , gender = Geschlecht , age = Alter</string>
+    <string name="Formel">Formel</string>
+    <string name="Beschreibung">Die von uns entwickelte Formel berechnet, wieviel Kamele eine bestimmte Person wert wäre. .....</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
