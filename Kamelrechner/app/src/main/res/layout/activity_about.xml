@@ -22,10 +22,11 @@
         app:layout_constraintVertical_bias="0.034" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/form"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Formel"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="36dp"
@@ -37,6 +38,7 @@
         android:layout_height="84dp"
         android:fontFamily="sans-serif"
         android:text="@string/Rechnung"
+        android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,12 +51,27 @@
         android:layout_width="283dp"
         android:layout_height="152dp"
         android:text="@string/Variablen"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.397" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="378dp"
+        android:layout_height="259dp"
+        android:text="@string/Beschreibung"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.681" />
 
     <Button
         android:id="@+id/info_close_btn"
@@ -69,5 +86,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.902" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
