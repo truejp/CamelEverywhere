@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="70dp"
+            android:layout_height="81dp"
+            android:layout_marginBottom="64dp"
+            android:alpha="1"
+            android:backgroundTint="#7EB157"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/go"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="28dp"
+            android:textStyle="normal|bold|italic"
+            android:typeface="sans"
+            app:cornerRadius="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="415dp"
+            android:layout_height="713dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.081"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/homepage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

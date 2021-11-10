@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.truejp.camelcalculator.WelcomeFragment"
+        android:label="Kamelrechner" >
+        <action
+            android:id="@+id/toCalculatorFragment"
+            app:destination="@id/calculatorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calculatorFragment"
+        android:name="com.truejp.camelcalculator.CalculatorFragment"
+        android:label="Wie viele Kamele bin ich wert?" >
+        <action
+            android:id="@+id/toResultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.truejp.camelcalculator.ResultFragment"
+        android:label="Dein Ergebnis" >
+        <action
+            android:id="@+id/toCalculatorFragment"
+            app:destination="@id/calculatorFragment" />
+        <action
+            android:id="@+id/toAboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.truejp.camelcalculator.AboutFragment"
+        android:label="Über Kamelrechner" >
+        <action
+            android:id="@+id/toResultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+</navigation>
