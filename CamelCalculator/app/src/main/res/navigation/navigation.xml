@@ -31,6 +31,9 @@
         <action
             android:id="@+id/toAboutFragment"
             app:destination="@id/aboutFragment" />
+        <argument
+            android:name="result"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
@@ -39,5 +42,8 @@
         <action
             android:id="@+id/toResultFragment"
             app:destination="@id/resultFragment" />
+        <argument
+            android:name="result"
+            app:argType="string" />
     </fragment>
 </navigation>

@@ -16,7 +16,8 @@ class AboutFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_about,container,false)
-        binding.infoCloseBtn.setOnClickListener{view: View -> view.findNavController().navigate(R.id.resultFragment)}
+        val res = ResultFragmentArgs.fromBundle(requireArguments()).result
+        binding.infoCloseBtn.setOnClickListener{view: View -> view.findNavController().navigate(AboutFragmentDirections.toResultFragment(res))}
         return binding.root
     }
 }

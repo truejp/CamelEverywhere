@@ -19,15 +19,15 @@ class CalculatorFragment : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_calculator, container, false)
         binding.calculate.setOnClickListener { view: View ->
-            if (checkCalculator()) view.findNavController().navigate(R.id.resultFragment)
+            if (checkCalculator()) view.findNavController().navigate(CalculatorFragmentDirections.toResultFragment(this.result.toString()))
         }
-        binding.male.setOnClickListener { view: View ->
+        binding.male.setOnClickListener {
             binding.imageView11.visibility = View.INVISIBLE
             binding.textView7.visibility = View.INVISIBLE
             binding.breastsizeInput.visibility = View.INVISIBLE
             binding.breastsizeInput.progress = 0
         }
-        binding.female.setOnClickListener { view: View ->
+        binding.female.setOnClickListener {
             binding.imageView11.visibility = View.VISIBLE
             binding.textView7.visibility = View.VISIBLE
             binding.breastsizeInput.visibility = View.VISIBLE
@@ -36,7 +36,6 @@ class CalculatorFragment : Fragment() {
     }
 
     private fun checkCalculator(): Boolean {
-        //check inputs and calc res
         val breast = binding.breastsizeInput.progress
         val eye = binding.eyecolorInput.progress
         val hair = binding.haircolorInput.progress
@@ -45,39 +44,23 @@ class CalculatorFragment : Fragment() {
         val ageHelper = binding.ageInput.text
         val weightHelper = binding.weigthInput.text
         if (ageHelper.trim().isEmpty() || weightHelper.trim().isEmpty() || name.trim().isEmpty()) {
-            //Some User input missing
             Toast.makeText(activity,"Bitte prüfe deine Eingaben!",Toast.LENGTH_SHORT).show();
             return false
         } else {
-            //User Input complete
             val age: Int = Integer.parseInt(ageHelper.toString())
             val weight: Int = Integer.parseInt(weightHelper.toString())
             var i = Log.i("No Error", "No missing values")
-            //Calculate Gender Bonus
-            var gender = 10
+            var gender: Int = 10
             when (binding.genderInput.checkedRadioButtonId) {
                 R.id.male -> {
                     print("Correct answer :p")
                 }
                 R.id.female -> {
                     print("female")
-                    var gender = 5
+                    gender = 5
                 }
             }
-            //Report all Values to LogCat
-            i = Log.i("Object Found", "Value from Body: $body")
-            i = Log.i("Object Found", "Value from Eye: $eye")
-            i = Log.i("Object Found", "Value from Breast: $breast")
-            i = Log.i("Object Found", "Value from Hair: $hair")
-            i = Log.i("Object Found", "Value from Gender: $gender")
-            i = Log.i("Object Found", "Value from Name: $name")
-            i = Log.i("Object Found", "Value from Age: $age")
-            i = Log.i("Object Found", "Value from Weight: $weight")
-            //calculate camels
-            var camels = (body + eye + breast + hair) * 2 + (1 / 200 * (weight - 65) * (weight - 65) + 10) + gender + (1 / 200 * (age - 20) * (age - 20) + 10)
-            i = Log.i("Result Available", "Value from Calculation: $camels")
-            val camelString = camels.toString()
-            this.result = 1
+            ((body + eye + breast + hair) * 2 + (1 / 200 * (weight - 65) * (weight - 65) + 10) + gender + (1 / 200 * (age - 20) * (age - 20) + 10)).also { this.result = it }
             return true
         }
     }
