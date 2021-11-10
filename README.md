@@ -1,5 +1,5 @@
 # CamelEverywhere
-Assignment mobile application
+Assignment Mobile Applikationen
 
 Contributors: Sophia Sturm, Alexander Lamers, Philipp Lehnet
 
