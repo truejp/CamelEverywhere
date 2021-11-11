@@ -3,6 +3,7 @@ package com.truejp.camelcalculator.database
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.util.*
 
 @Entity(tableName="calculation_table")
 data class Calculation(
@@ -37,5 +38,8 @@ data class Calculation(
     val camels: String,
 
     @ColumnInfo(name = "comment")
-    val comment: String
+    val comment: String,
+
+    @ColumnInfo(name = "date")
+    val date: String
 )

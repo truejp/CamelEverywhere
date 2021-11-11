@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.truejp.camelcalculator.database.Calculation
 import com.truejp.camelcalculator.database.CalculationRepository
 import kotlinx.coroutines.launch
+import java.util.*
 
 class MainActivityViewModel (
     private val repository: CalculationRepository
@@ -20,9 +21,10 @@ class MainActivityViewModel (
     var breastsize = ""
     var camels = ""
     var comment = ""
+    var date=""
 
     fun insert() = viewModelScope.launch {
-        repository.insert(Calculation(0, userText, gender, age, weigth, body, eyecolor, haircolor, breastsize, camels, comment))
+        repository.insert(Calculation(0, userText, gender, age, weigth, body, eyecolor, haircolor, breastsize, camels, comment, date))
     }
 
     fun deleteAll() = viewModelScope.launch {

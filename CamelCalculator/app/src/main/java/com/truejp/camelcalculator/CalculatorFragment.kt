@@ -1,4 +1,5 @@
 package com.truejp.camelcalculator
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -6,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -15,6 +17,8 @@ import com.truejp.camelcalculator.database.CalculationRepository
 import com.truejp.camelcalculator.databinding.FragmentCalculatorBinding
 import com.truejp.camelcalculator.model.MainActivityViewModel
 import com.truejp.camelcalculator.model.MainActivityViewModelFactory
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class CalculatorFragment : Fragment() {
     var result = 0
@@ -41,6 +45,7 @@ class CalculatorFragment : Fragment() {
         return binding.root
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun checkCalculator(): Boolean {
         val breast = binding.breastsizeInput.progress
         val eye = binding.eyecolorInput.progress
@@ -55,6 +60,9 @@ class CalculatorFragment : Fragment() {
         var bodyText = ""
         var hairText = ""
         var breastText = ""
+        val current = LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy")
+        val formatted = current.format(formatter)
         if (ageHelper.trim().isEmpty() || weightHelper.trim().isEmpty() || name.trim().isEmpty()) {
             Toast.makeText(activity,"Bitte prüfe deine Eingaben!",Toast.LENGTH_SHORT).show();
             return false
@@ -78,7 +86,7 @@ class CalculatorFragment : Fragment() {
                     genderText = "Frau"
                 }
             }
-            ((body + eye + breast + hair) * 2 + (1 / 200 * (weight - 65) * (weight - 65) + 10) + gender + (1 / 200 * (age - 20) * (age - 20) + 10)).also { this.result = it }
+            ((body + eye + breast + hair) * 2 + (-1 / 200 * (weight - 65) * (weight - 65) + 10) + gender + (-1 / 200 * (age - 20) * (age - 20) + 10)).also { this.result = it }
             val database = activity?.let { CalculationDatabase.getInstance(it.applicationContext) }
             val calculationRepository = database?.let { CalculationRepository(it.calculationDao) }
             val viewModelFactory = calculationRepository?.let { MainActivityViewModelFactory(it) }
@@ -124,6 +132,7 @@ class CalculatorFragment : Fragment() {
             mainActivityViewModel?.breastsize = breastText
             mainActivityViewModel?.camels = this.result.toString()
             mainActivityViewModel?.comment = comment.toString()
+            mainActivityViewModel?.date = formatted
             mainActivityViewModel?.insert()
             return true
         }
