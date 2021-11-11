@@ -13,26 +13,29 @@ data class Calculation(
     val user: String,
 
     @ColumnInfo(name = "gender")
-    val gender: Boolean,
+    val gender: String,
 
     @ColumnInfo(name = "age")
-    val age: Int,
+    val age: String,
 
     @ColumnInfo(name = "weight")
-    val weight: Int,
+    val weight: String,
 
     @ColumnInfo(name = "body")
-    val body: Int,
+    val body: String,
 
     @ColumnInfo(name = "eyecolor")
-    val eyecolor: Int,
+    val eyecolor: String,
 
     @ColumnInfo(name = "haircolor")
-    val haircolor: Int,
+    val haircolor: String,
 
     @ColumnInfo(name = "breastsize")
-    val breastsize: Int,
+    val breastsize: String,
 
     @ColumnInfo(name = "camels")
-    val camels: Int
+    val camels: String,
+
+    @ColumnInfo(name = "comment")
+    val comment: String
 )

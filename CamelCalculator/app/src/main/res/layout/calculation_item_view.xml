@@ -12,43 +12,179 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
         android:background="@color/background">
 
         <LinearLayout
-            android:layout_width="351dp"
-            android:layout_height="match_parent"
+            android:layout_width="400dp"
+            android:layout_height="35dp"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/deleteBtn"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="126dp"
-                android:layout_height="match_parent"
-                android:text="@{calculationEntity.user}" />
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
-                android:layout_height="53dp"
-                android:text="@{Integer.toString(calculationEntity.camels)}" />
-
-        </LinearLayout>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/deleteBtn"
-            android:layout_width="55dp"
-            android:layout_height="57dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@android:drawable/ic_menu_delete" />
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Name:"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@{calculationEntity.user}"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="400dp"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.166">
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Kamele:"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@{calculationEntity.camels}"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="145dp"
+                android:layout_height="wrap_content"
+                android:text="Gewicht:"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{calculationEntity.weight}"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="400dp"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.332">
+
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Statur: "
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@{calculationEntity.body}"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="145dp"
+                android:layout_height="wrap_content"
+                android:text="Augenfarbe: "
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{calculationEntity.eyecolor}"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="400dp"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Haare: "
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@{calculationEntity.eyecolor}"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView43"
+                android:layout_width="145dp"
+                android:layout_height="wrap_content"
+                android:text="Brüste: "
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView44"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{calculationEntity.breastsize}"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="400dp"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.664">
+
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="Kommentar:"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{calculationEntity.comment}"
+                android:textSize="25sp" />
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

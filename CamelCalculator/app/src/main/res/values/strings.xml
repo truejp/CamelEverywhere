@@ -18,9 +18,8 @@
     <string name="Info_Header">Über unsere App</string>
     <string name="info">i</string>
     <string name="verlauf">Name - Ergebnis - Kommentar</string>
-    <string name="res_close">Nächste Person</string>
-    <string name="Rechnung">camels = (body+eye+breast+hair)*2+(1/200*(weight-65)²+10)+gender+(1/200*(age-20)²+10)</string>
-    <string name="Variablen">body = Statur \n eye = Augenfarbe \n breast = Körpchengröße \n hair= Haarfarbe \n weight = Gewicht in Kilogramm \n gender = Geschlecht \n age = Alter</string>
+    <string name="res_close">Neue Person</string>
+    <string name="Rechnung">Kamele = (Statur+Augenfarbe+Körpchengröße+Haarfarbe)*2+(-1/200*(Gewicht-65)²+10)+Geschlecht+(-1/200*(Alter-20)²+10)</string>
     <string name="Formel">Formel</string>
     <string name="Beschreibung">Die von uns entwickelte Formel berechnet, wieviel Kamele eine bestimmte Person wert wäre. Die von uns entwickelte Formel berechnet, wieviel Kamele eine bestimmte Person wert wäre.
 Früher wurden tatsächlich Personen gegen Tiere eingetauscht. Heutzutage ist dies selbstverständlich nicht der Fall. Der Kamelrechner dient lediglich zur Unterhaltung. Um herauszufinden wieviele Kamele beispielsweise deine Freundin oder dein Freund wert wäre, werden für die Berechung, Angaben zu den optischen Eigenschaften der jeweiligen Person herangezogen.

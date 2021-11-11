@@ -11,23 +11,24 @@ class MainActivityViewModel (
 ) : ViewModel() {
     val calculations = repository.allCalculations
     var userText = ""
-    var gender = false
-    var age = 0
-    var weigth = 0
-    var body = 0
-    var eyecolor = 0
-    var haircolor = 0
-    var breastsize = 0
-    var camels = 0
+    var gender = ""
+    var age = ""
+    var weigth = ""
+    var body = ""
+    var eyecolor = ""
+    var haircolor = ""
+    var breastsize = ""
+    var camels = ""
+    var comment = ""
 
     fun insert() = viewModelScope.launch {
-        repository.insert(Calculation(0, userText, gender, age, weigth, body, eyecolor, haircolor, breastsize, camels))
+        repository.insert(Calculation(0, userText, gender, age, weigth, body, eyecolor, haircolor, breastsize, camels, comment))
     }
 
     fun deleteAll() = viewModelScope.launch {
         repository.deleteAll()
     }
-    fun delete() = viewModelScope.launch {
-        repository.delete()
+    fun delete(calculation: Calculation) = viewModelScope.launch {
+        repository.delete(calculation)
     }
 }
