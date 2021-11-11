@@ -17,8 +17,8 @@
     <string name="close">Info schließen</string>
     <string name="Info_Header">Über unsere App</string>
     <string name="info">i</string>
-    <string name="verlauf">Highscore</string>
-    <string name="res_close">Neuen Wert berechnen</string>
+    <string name="verlauf">Name - Ergebnis - Kommentar</string>
+    <string name="res_close">Nächste Person</string>
     <string name="Rechnung">camels = (body+eye+breast+hair)*2+(1/200*(weight-65)²+10)+gender+(1/200*(age-20)²+10)</string>
     <string name="Variablen">body = Statur \n eye = Augenfarbe \n breast = Körpchengröße \n hair= Haarfarbe \n weight = Gewicht in Kilogramm \n gender = Geschlecht \n age = Alter</string>
     <string name="Formel">Formel</string>

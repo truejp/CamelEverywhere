@@ -1,7 +1,6 @@
 package com.truejp.camelcalculator.database
 
 import androidx.lifecycle.LiveData
-import java.util.jar.Attributes
 
 class CalculationRepository(private val calculationDao: CalculationDao) {
     val allCalculations: LiveData<List<Calculation>> =
@@ -13,5 +12,8 @@ class CalculationRepository(private val calculationDao: CalculationDao) {
 
     suspend fun deleteAll() {
         calculationDao.deleteAll()
+    }
+    fun delete(calculation: Calculation) {
+        calculationDao.delete(calculation)
     }
 }

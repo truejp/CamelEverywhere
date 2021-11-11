@@ -7,8 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.truejp.camelcalculator.database.CalculationDatabase
+import com.truejp.camelcalculator.database.CalculationRepository
 import com.truejp.camelcalculator.databinding.FragmentCalculatorBinding
+import com.truejp.camelcalculator.model.MainActivityViewModel
+import com.truejp.camelcalculator.model.MainActivityViewModelFactory
 
 class CalculatorFragment : Fragment() {
     var result = 0
@@ -61,6 +67,26 @@ class CalculatorFragment : Fragment() {
                 }
             }
             ((body + eye + breast + hair) * 2 + (1 / 200 * (weight - 65) * (weight - 65) + 10) + gender + (1 / 200 * (age - 20) * (age - 20) + 10)).also { this.result = it }
+
+            //Save User Input to DB
+            val database = activity?.let { CalculationDatabase.getInstance(it.applicationContext) }
+            val calculationRepository = database?.let { CalculationRepository(it.calculationDao) }
+            val viewModelFactory = calculationRepository?.let { MainActivityViewModelFactory(it) }
+            val mainActivityViewModel = viewModelFactory?.let {
+                ViewModelProvider(this,
+                    it
+                )[MainActivityViewModel::class.java]
+            }
+            mainActivityViewModel?.userText = name.toString()
+            mainActivityViewModel?.gender = false
+            mainActivityViewModel?.age = age
+            mainActivityViewModel?.weigth = weight
+            mainActivityViewModel?.body = body
+            mainActivityViewModel?.eyecolor = eye
+            mainActivityViewModel?.haircolor = hair
+            mainActivityViewModel?.breastsize = breast
+            mainActivityViewModel?.camels = this.result
+            mainActivityViewModel?.insert()
             return true
         }
     }

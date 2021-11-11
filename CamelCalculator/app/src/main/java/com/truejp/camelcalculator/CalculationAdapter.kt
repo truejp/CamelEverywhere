@@ -34,7 +34,8 @@ class NoteDiffCallback : DiffUtil.ItemCallback<Calculation>(){
         return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: Calculation, newItem: Calculation): Boolean {
+    override fun areContentsTheSame(oldItem: Calculation, newItem: Calculation
+    ): Boolean {
         return oldItem == newItem
     }
 

@@ -32,7 +32,7 @@ class ResultFragment : Fragment() {
         binding.shareBtn.setOnClickListener{
             val intent= Intent()
             intent.action=Intent.ACTION_SEND
-            intent.putExtra(Intent.EXTRA_TEXT,"Hey, ich habe gerade mit der coolsten App ausgerechnet, dass ich $res Kamele wert bin!!!")
+            intent.putExtra(Intent.EXTRA_TEXT,"Wusstest du schon, dass ich $res Kamele wert bin?! Wie viele bist du wert? Finde es heraus auf https://www.bl-itsolutions.de/")
             intent.type="text/plain"
             startActivity(Intent.createChooser(intent,"Teilen via:"))
         }
@@ -48,12 +48,19 @@ class ResultFragment : Fragment() {
                 it
             )[MainActivityViewModel::class.java]
         }
+
         binding.viewModel = mainActivityViewModel
         binding.lifecycleOwner = this
         binding.calculationList.layoutManager = LinearLayoutManager(this.context);
         val adapter = CalculationAdapter()
         binding.calculationList.adapter = adapter
-        mainActivityViewModel?.notes?.observe(viewLifecycleOwner, Observer {adapter.submitList(it)})
+        mainActivityViewModel?.calculations?.observe(viewLifecycleOwner, Observer {adapter.submitList(it)})
+        //Add Something to View onClick
+        binding.testBtn.setOnClickListener{
+            mainActivityViewModel?.deleteAll()
+        }
+
+
 
         return binding.root
     }
